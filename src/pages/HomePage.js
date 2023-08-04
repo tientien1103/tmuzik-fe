@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <div className="container max-w-1072 flex flex-col mb-24">
       <div className="flex lg:flex-row md:flex-col-reverse xs:flex-col-reverse">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center lg:ml-0 ml-12">
           <div className="flex justify-center lg:gap-[350px] items-center lg:flex-row-reverse xs:gap-4 md:flex-col-reverse md:gap-6 xs:flex-col mt-4 mb-10">
             <SearchInput handleSubmit={handleSubmit} />
             <h2 className="font-bold text-3xl text-white">New & Trending</h2>
@@ -39,7 +39,7 @@ const HomePage = () => {
             <h2 className="text-white text-lg font-semibold">{`No match found for "${filterName}"`}</h2>
           )}
 
-          <div className="flex flex-wrap md:w-[800px] lg:w-[1000px] justify-center gap-8">
+          <div className="flex flex-col lg:flex-row md:flex-row flex-wrap md:w-[800px] lg:w-[1000px] justify-center gap-8">
             {songs?.map((song, i) => (
               <SongCard
                 key={song.key}
