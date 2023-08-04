@@ -1,7 +1,6 @@
 import { createContext, useEffect, useReducer } from "react";
 import apiService from "../app/apiService";
 import { isValidToken } from "../utils/jwt";
-import { useSelector } from "react-redux";
 
 const initialState = {
   isInitialized: false,
