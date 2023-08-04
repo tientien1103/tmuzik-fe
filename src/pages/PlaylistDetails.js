@@ -52,7 +52,7 @@ function PlaylistDetails() {
             {songs.map((song, i) => (
               <div
                 key={`${song.key}+${song._id}`}
-                className="mt-6 lg:w-[550px] md:w-[450px] ml-2 lg:ml-0 md:ml-0 w-full flex flex-col"
+                className="mt-6 lg:w-[550px] md:w-[450px] w-[400px] flex flex-col"
               >
                 <SongBar
                   song={song}
