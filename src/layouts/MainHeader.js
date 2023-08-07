@@ -16,7 +16,6 @@ import { Link as RouterLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { record } from "../features/user-history/userHistorySlice";
-import SearchInput from "../components/SearchInput";
 
 export default function MainHeader({ handleClick }) {
   const { user, logout } = useAuth();
