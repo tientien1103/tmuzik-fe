@@ -7,14 +7,14 @@ const PlayPause = ({ isPlaying, activeSong, song, handlePause, handlePlay }) =>
     <PauseCircleIcon
       size={100}
       fontSize="large"
-      className="text-primary"
+      className="text-primary cursor-pointer"
       onClick={handlePause}
     />
   ) : (
     <PlayCircleIcon
       size={100}
       fontSize="large"
-      className="text-primary"
+      className="text-primary cursor-pointer"
       onClick={handlePlay}
     />
   );
