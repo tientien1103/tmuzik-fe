@@ -50,9 +50,17 @@ const HomePage = () => {
             <h2 className="font-bold text-3xl text-white">New & Trending</h2>
           </div>
 
-          {!songs.length && (
-            <h2 className="text-white text-lg font-semibold">{`No match found for "${filterName}"`}</h2>
-          )}
+         {!songs.length ? (
+            filterName.length ? (
+              <h2 className="text-white text-lg font-semibold">
+                {`No match found for ${filterName}`}
+              </h2>
+            ) : (
+              <h2 className="text-white text-lg font-semibold">
+                <Loader />
+              </h2>
+            )
+          ) : null}
 
           <div className="flex flex-col lg:flex-row md:flex-row flex-wrap md:w-[800px] lg:w-[1000px] justify-center gap-8">
             {songs?.map((song, i) => (
@@ -67,6 +75,7 @@ const HomePage = () => {
               />
             ))}
           </div>
+          {loading && <Loader />}
         </div>
         <div className="lg:sticky lg:w-[500px] lg:mr-12 relative top-10 h-fit lg:mt-5">
           <TopPlay />
