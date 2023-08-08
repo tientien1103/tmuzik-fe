@@ -136,7 +136,7 @@ export default function MainHeader({ handleClick }) {
 
         <Box
           sx={{
-            display: { xs: "none", lg: "flex", md: "flex", sm: "flex" },
+            display: { xs: "flex", lg: "flex", md: "flex", sm: "flex" },
             color: "white",
             gap: 1,
             alignItems: "center",
@@ -149,7 +149,7 @@ export default function MainHeader({ handleClick }) {
           >
             {user?.name.slice(0, 1)}
           </Avatar>
-          <Typography variant="subtitle2">{user?.name}</Typography>
+          <Typography sx={{display: { xs: "none", lg: "flex", md: "flex", sm: "none" }}} variant="subtitle2">{user?.name}</Typography>
         </Box>
         {renderMenu}
       </Toolbar>
