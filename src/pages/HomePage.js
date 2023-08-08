@@ -24,6 +24,7 @@ const HomePage = () => {
       window.innerHeight + document.documentElement.scrollTop + 1 >=
       document.documentElement.scrollHeight
     ) {
+      setLoading(true);
       setPage((prev) => prev + 1);
     }
   };
