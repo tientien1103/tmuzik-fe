@@ -8,10 +8,11 @@ import Loader from "../components/Loader";
 
 const HomePage = () => {
   const [filterName, setFilterName] = useState("");
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
-  const { currentPageSongs, songsById, isLoading } = useSelector(
+  const { currentPageSongs, songsById } = useSelector(
     (state) => state.song
   );
   const { activeSong, isPlaying } = useSelector((state) => state.player);
@@ -39,8 +40,6 @@ const HomePage = () => {
   const handleSubmit = (searchQuery) => {
     setFilterName(searchQuery);
   };
-  if (isLoading) return <Loader />;
-
   return (
     <div className="container max-w-1072 mx-auto flex flex-col mb-24">
       <div className="flex lg:flex-row md:flex-col-reverse xs:flex-col-reverse">
