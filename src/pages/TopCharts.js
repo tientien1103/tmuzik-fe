@@ -27,7 +27,7 @@ const TopCharts = () => {
       <div className="flex flex-wrap justify-center gap-12">
         {songs.map((song, i) => (
           <div key={song.key} className="flex flex-row items-center">
-            <h3 className="lg:font-bold xs:hidden text-[80px] w-[90px] text-right text-thirdly">
+            <h3 className="lg:font-bold xs:hidden md:text-[70px] md:w-[70px] lg:text-[80px] lg:w-[90px] text-right text-thirdly">
               {i + 1}
             </h3>
             <SongCard
