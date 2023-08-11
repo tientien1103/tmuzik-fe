@@ -41,7 +41,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container max-w-full mx-auto flex flex-col mb-24">
+    <div className="container max-w-1072 mx-auto flex flex-col mb-24">
       <div className="flex lg:flex-row md:flex-col-reverse sm:flex-col-reverse xs:flex-col-reverse">
         <div className="flex flex-col items-center lg:mt-0 md:mt-20 xs:mt-16">
           <div className="flex justify-center items-center gap-4 flex-col md:gap-6 mt-4 mb-10">
@@ -61,7 +61,7 @@ const HomePage = () => {
             )
           ) : null}
 
-          <div className="flex flex-col lg:flex-row flex-wrap lg:w-[600px] xl:w-[950px] justify-center gap-8">
+          <div className="flex flex-col md:flex-row lg:flex-row flex-wrap md:w-[700px] lg:w-[600px] xl:w-[950px] justify-center gap-8">
             {songs?.map((song, i) => (
               <SongCard
                 key={song.key}
