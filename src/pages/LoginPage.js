@@ -37,7 +37,7 @@ const defaultValues = {
   remember: true,
 };
 
-export const imgRandom = Math.floor(Math.random() * 5) + 2;
+export const imgRandom = Math.floor(Math.random() * 4) + ;
 
 const LoginPage = () => {
   const auth = useAuth();
