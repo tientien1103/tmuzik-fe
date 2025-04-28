@@ -16,7 +16,7 @@ function SearchInput({ handleSubmit }) {
         value={searchQuery}
         placeholder="Search..."
         onChange={(event) => setSearchQuery(event.target.value)}
-        sx={{ width: 500 }}
+        sx={{ width: "80vw", maxWidth: 500 }}
         size="small"
         InputProps={{
           endAdornment: (

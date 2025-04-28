@@ -41,10 +41,10 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container max-w-1072 mx-auto flex flex-col mb-24">
+    <div className="container max-w-1072 mx-auto flex flex-col">
       <div className="flex lg:flex-row md:flex-col-reverse sm:flex-col-reverse xs:flex-col-reverse">
-        <div className="flex flex-col items-center lg:mt-0 md:mt-20 xs:mt-16">
-          <div className="flex justify-center items-center gap-4 flex-col md:gap-6 mt-4 mb-10">
+        <div className="flex flex-col items-center lg:mt-4 md:mt-4 xs:mt-4">
+          <div className="flex justify-center items-center gap-4 flex-col md:gap-6 mt-2 mb-10">
             <h2 className="font-bold text-3xl text-white">New & Trending</h2>
             <SearchInput handleSubmit={handleSubmit} />
           </div>

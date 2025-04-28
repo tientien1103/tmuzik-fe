@@ -3,12 +3,20 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { sendSongReaction } from "../song/songSlice.jsx";
 import { IconButton } from "@mui/material";
 import { useDispatch } from "react-redux";
+import useAuth from "../../hooks/useAuth.jsx";
+import { useNavigate } from "react-router-dom";
 
 const SongReaction = ({ song }) => {
   const [isLiked, setLiked] = React.useState(song?.isLiked ?? true);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   const handleClick = (emoji) => {
+    if (!isAuthenticated) {
+      navigate("/login");
+      return;
+    }
     dispatch(sendSongReaction({ songId: song._id, emoji }));
     setLiked((pIsLiked) => !pIsLiked);
   };

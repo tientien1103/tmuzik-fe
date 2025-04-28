@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import BlankLayout from "../layouts/BlankLayout.jsx";
 import MainLayout from "../layouts/MainLayout.jsx";
 import HomePage from "../pages/HomePage.jsx";
@@ -19,19 +19,22 @@ import PlaylistDetails from "../pages/PlaylistDetails.jsx";
 
 function Router() {
   const { activeSong } = useSelector((state) => state.player);
+  const location = useLocation();
+  const isAuthPage = ['/login', '/register'].includes(location.pathname);
+
   return (
     <div className="relative">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <AuthRequire>
-              <MainLayout />
-            </AuthRequire>
-          }
-        >
+        <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="account" element={<AccountGeneral />} />
+          <Route
+            path="account"
+            element={
+              <AuthRequire>
+                <AccountGeneral />
+              </AuthRequire>
+            }
+          />
           <Route path="songs/:songId" element={<SongDetails />} />
           <Route path="artists/:artistId" element={<ArtistDetails />} />
           <Route path="playlists" element={<Playlist />} />
@@ -47,7 +50,7 @@ function Router() {
         </Route>
       </Routes>
 
-      {activeSong?.title && (
+      {activeSong?.title && !isAuthPage && (
         <div className="fixed h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#27A3A3] backdrop-blur-lg rounded-t-3xl z-10">
           <MusicPlayer />
         </div>
